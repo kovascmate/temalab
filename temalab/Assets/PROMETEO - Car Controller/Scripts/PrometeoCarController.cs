@@ -13,8 +13,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
 
-public class PrometeoCarController : MonoBehaviour
+public class PrometeoCarController : NetworkBehaviour
 {
 
     //CAR SETUP
@@ -266,6 +267,7 @@ public class PrometeoCarController : MonoBehaviour
     void Update()
     {
 
+      if(!IsOwner) return;
       //CAR DATA
 
       // We determine the speed of the car.
