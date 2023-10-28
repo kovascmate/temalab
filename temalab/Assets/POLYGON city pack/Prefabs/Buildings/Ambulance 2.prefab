@@ -46,13 +46,14 @@ GameObject:
   - component: {fileID: 7720332250247786423}
   - component: {fileID: 8412480185350887883}
   - component: {fileID: 954242427459870505}
+  - component: {fileID: 1218099183958647585}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7720332250247786423
 Transform:
   m_ObjectHideFlags: 0
@@ -61,13 +62,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517072154801134359}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16722809, y: -0, z: -0, w: 0.9859182}
-  m_LocalPosition: {x: 0.013578653, y: 5.3979263, z: -7.725223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 439343840326835762}
-  m_LocalEulerAnglesHint: {x: 19.253, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8412480185350887883
 Camera:
   m_ObjectHideFlags: 0
@@ -127,6 +128,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517072154801134359}
   m_Enabled: 1
+--- !u!114 &1218099183958647585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517072154801134359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb245c6c6f76c4b41b18d2bcad35046a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 439343840326835762}
+  smoothSpeed: 0.125
+  locationOffset: {x: 0, y: 4, z: -5.5}
+  rotationOffset: {x: 25, y: 0, z: 0}
 --- !u!1 &2020472941400463815
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +747,7 @@ GameObject:
   - component: {fileID: 3824434563016513574}
   - component: {fileID: 8901009272412260131}
   - component: {fileID: 8040823981159669995}
+  - component: {fileID: 774482065733979721}
   m_Layer: 0
   m_Name: Ambulance 2
   m_TagString: Player
@@ -881,6 +899,19 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &774482065733979721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607302631565868542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9625b82c39ff6a74a989976c3beb178c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1517072154801134359}
 --- !u!1 &8198911899591095629
 GameObject:
   m_ObjectHideFlags: 0

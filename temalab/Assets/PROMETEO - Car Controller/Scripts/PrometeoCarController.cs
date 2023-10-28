@@ -17,10 +17,11 @@ using Unity.Netcode;
 
 public class PrometeoCarController : NetworkBehaviour
 {
+    
 
     //CAR SETUP
 
-      [Space(20)]
+    [Space(20)]
       //[Header("CAR SETUP")]
       [Space(10)]
       [Range(20, 190)]
@@ -43,20 +44,20 @@ public class PrometeoCarController : NetworkBehaviour
       public int handbrakeDriftMultiplier = 5; // How much grip the car loses when the user hit the handbrake.
       [Space(10)]
       public Vector3 bodyMassCenter; // This is a vector that contains the center of mass of the car. I recommend to set this value
-                                    // in the points x = 0 and z = 0 of your car. You can select the value that you want in the y axis,
-                                    // however, you must notice that the higher this value is, the more unstable the car becomes.
-                                    // Usually the y value goes from 0 to 1.5.
+                                   // in the points x = 0 and z = 0 of your car. You can select the value that you want in the y axis,
+                             // however, you must notice that the higher this value is, the more unstable the car becomes.
+                                                           // Usually the y value goes from 0 to 1.5.
 
     //WHEELS
 
-      //[Header("WHEELS")]
+    //[Header("WHEELS")]
 
-      /*
-      The following variables are used to store the wheels' data of the car. We need both the mesh-only game objects and wheel
-      collider components of the wheels. The wheel collider components and 3D meshes of the wheels cannot come from the same
-      game object; they must be separate game objects.
-      */
-      public GameObject frontLeftMesh;
+    /*
+    The following variables are used to store the wheels' data of the car. We need both the mesh-only game objects and wheel
+    collider components of the wheels. The wheel collider components and 3D meshes of the wheels cannot come from the same
+    game object; they must be separate game objects.
+    */
+    public GameObject frontLeftMesh;
       public WheelCollider frontLeftCollider;
       [Space(10)]
       public GameObject frontRightMesh;
@@ -158,6 +159,8 @@ public class PrometeoCarController : NetworkBehaviour
       float RLWextremumSlip;
       WheelFrictionCurve RRwheelFriction;
       float RRWextremumSlip;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -268,6 +271,7 @@ public class PrometeoCarController : NetworkBehaviour
     {
 
       if(!IsOwner) return;
+
       //CAR DATA
 
       // We determine the speed of the car.
