@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
-
+    public GameObject Car;
     private GameController gameController;
     // Start is called before the first frame update
     void Start()
@@ -21,9 +21,16 @@ public class DestroyByContact : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Host")
+        Debug.Log("Collision on car");
+        if(other.tag == "+")
         {
+            Vector3 scale = Car.transform.localScale;
+            scale.x *= 0.66f;
+            scale.y *= 0.66f;
+            scale.z *= 0.66f;
 
+            Car.transform.localScale = scale;
+            Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
     }
 }

@@ -7,6 +7,7 @@ public class CameraActivation : NetworkBehaviour
 {
 
     public GameObject camera;
+    public AudioListener listener;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class CameraActivation : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public override void OnNetworkSpawn()
@@ -22,10 +24,12 @@ public class CameraActivation : NetworkBehaviour
         if (IsOwner)
         {
             camera.SetActive(true);
+            listener.enabled = true;
         }
         else
         {
             camera.SetActive(false);
+            listener.enabled = false;
         }
     }
 }

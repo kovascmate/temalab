@@ -23,8 +23,8 @@ public class PrometeoCarController : NetworkBehaviour
       [Space(20)]
       //[Header("CAR SETUP")]
       [Space(10)]
-      [Range(20, 190)]
-      public int maxSpeed = 90; //The maximum speed that the car can reach in km/h.
+      //[Range(20, 10000)]
+      public int maxSpeed = 200; //The maximum speed that the car can reach in km/h.
       [Range(10, 120)]
       public int maxReverseSpeed = 45; //The maximum speed that the car can reach while going on reverse in km/h.
       [Range(1, 10)]
@@ -268,7 +268,7 @@ public class PrometeoCarController : NetworkBehaviour
     {
 
       if(!IsOwner) return;
-      //CAR DATA
+        //CAR DATA
 
       // We determine the speed of the car.
       carSpeed = (2 * Mathf.PI * frontLeftCollider.radius * frontLeftCollider.rpm * 60) / 1000;
@@ -519,7 +519,7 @@ public class PrometeoCarController : NetworkBehaviour
       if(localVelocityZ < -1f){
         Brakes();
       }else{
-        if(Mathf.RoundToInt(carSpeed) < maxSpeed){
+        if(true/*Mathf.RoundToInt(carSpeed) < maxSpeed*/){
           //Apply positive torque in all wheels to go forward if maxSpeed has not been reached.
           frontLeftCollider.brakeTorque = 0;
           frontLeftCollider.motorTorque = (accelerationMultiplier * 50f) * throttleAxis;

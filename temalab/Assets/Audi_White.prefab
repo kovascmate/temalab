@@ -1548,7 +1548,7 @@ Transform:
   m_Children:
   - {fileID: 1757902810550920548}
   - {fileID: 3615292534651704692}
-  m_Father: {fileID: 3216575129923569518}
+  m_Father: {fileID: 5406993771165810659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355872652304397487
 GameObject:
@@ -1657,7 +1657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377224004245564798}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.042000055, y: 0, z: 0.3909998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1666,7 +1666,7 @@ Transform:
   - {fileID: 7296485019020508593}
   - {fileID: 812294551120676277}
   - {fileID: 6348463338569814044}
-  m_Father: {fileID: 3216575129923569518}
+  m_Father: {fileID: 5406993771165810659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463318519932968647
 GameObject:
@@ -5266,6 +5266,73 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4210346239480314325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4404467622105712959}
+  - component: {fileID: 6055143628260771189}
+  - component: {fileID: 2331174400908551662}
+  m_Layer: 0
+  m_Name: HitReceiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4404467622105712959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210346239480314325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3216575129923569518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6055143628260771189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210346239480314325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.94, y: 1.77, z: 5.59}
+  m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &2331174400908551662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210346239480314325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1117f21e67aa8408429e74d9e21038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Car: {fileID: 4839645139217163426}
 --- !u!1 &4266648701941445473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,7 +6212,7 @@ GameObject:
   - component: {fileID: 2458553002927512747}
   m_Layer: 0
   m_Name: Audi_White
-  m_TagString: Host
+  m_TagString: +
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6164,10 +6231,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4728620918029317867}
-  - {fileID: 3034485545564142389}
-  - {fileID: 2277780563139390610}
-  - {fileID: 8327644613478422134}
   - {fileID: 6724814190906097823}
+  - {fileID: 4404467622105712959}
+  - {fileID: 5406993771165810659}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8588536711304217104
@@ -6209,7 +6275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 150
+  maxSpeed: 190
   maxReverseSpeed: 45
   accelerationMultiplier: 9
   maxSteeringAngle: 35
@@ -6308,6 +6374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 4591129526369665611}
+  listener: {fileID: 2847797248728139381}
 --- !u!65 &2458553002927512747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6324,7 +6391,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9, y: 1.45, z: 4.95}
@@ -21209,7 +21276,7 @@ Transform:
   - {fileID: 4670356649046277073}
   - {fileID: 7274427867184800413}
   - {fileID: 2759786283715998260}
-  m_Father: {fileID: 3216575129923569518}
+  m_Father: {fileID: 5406993771165810659}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &8881500843747152111
 GameObject:
@@ -21242,6 +21309,40 @@ Transform:
   m_Children:
   - {fileID: 3322844853484755977}
   - {fileID: 7043870493813526499}
+  m_Father: {fileID: 3216575129923569518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8897545494935262670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5406993771165810659}
+  m_Layer: 0
+  m_Name: Car
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5406993771165810659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8897545494935262670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8327644613478422134}
+  - {fileID: 2277780563139390610}
+  - {fileID: 3034485545564142389}
   m_Father: {fileID: 3216575129923569518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8958166863907191262

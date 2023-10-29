@@ -8,6 +8,7 @@ TagManager:
   - burgir
   - Cliens
   - Host
+  - +
   layers:
   - Default
   - TransparentFX
