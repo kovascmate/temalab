@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class DestroyByContact : MonoBehaviour
+public class DestroyByContact : NetworkBehaviour
 {
     public GameObject Car;
     private GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
+      
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -21,16 +23,22 @@ public class DestroyByContact : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision on car");
-        if(other.tag == "+")
+        if (OwnerClientId == NetworkManager.ServerClientId)
         {
-            Vector3 scale = Car.transform.localScale;
-            scale.x *= 0.66f;
-            scale.y *= 0.66f;
-            scale.z *= 0.66f;
+            Debug.Log("Collision on car");
+            if (other.tag == "+")
+            {
+                Vector3 scale = Car.transform.localScale;
+                scale.x *= 0.66f;
+                scale.y *= 0.66f;
+                scale.z *= 0.66f;
 
-            Car.transform.localScale = scale;
-            Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                Car.transform.localScale = scale;
+                Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
+        }
+        else {
+            Car.tag = "+";
         }
     }
 }
