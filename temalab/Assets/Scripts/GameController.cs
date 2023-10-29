@@ -15,7 +15,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(maxHits == 0)
+        {
+
+        }
     }
 
     public void Hit()

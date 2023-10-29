@@ -87,6 +87,7 @@ public enum ADDRESSFAM
 
 
         });
+
         clientButton.onClick.AddListener(()=>
         {
             NetworkManager.Singleton.StartClient();
@@ -103,7 +104,7 @@ public enum ADDRESSFAM
                 }
                 else
                 {
-                  
+                   
                 }
 
             }

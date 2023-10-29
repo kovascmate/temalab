@@ -7,11 +7,11 @@ public class DestroyByContact : NetworkBehaviour
 {
     public GameObject Car;
     public GameObject cam;
+    public GameObject material;
     private GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
-      
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -22,6 +22,34 @@ public class DestroyByContact : NetworkBehaviour
             Debug.Log("Cannot find GameController script");
         }
     }
+
+     void Update()
+    {
+        if(gameController.maxHits == 0)
+        {
+            List<NetworkClient> clients = new List<NetworkClient>();
+            foreach (var client in NetworkManager.Singleton.ConnectedClientsList)
+            {
+                if (client.ClientId != NetworkManager.ServerClientId)
+                {
+                    clients.Add(client);
+                    // client.tag = "asd";
+                }
+                else
+                {
+                    Car.transform.localScale = new Vector3(1,1,1);
+                }
+
+            }
+            foreach (var client in clients)
+            {
+                NetworkManager.Singleton.DisconnectClient(client.ClientId);
+            }
+
+            gameController.maxHits = 5;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(gameController.maxHits != 0)

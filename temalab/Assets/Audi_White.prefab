@@ -5334,6 +5334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Car: {fileID: 4839645139217163426}
   cam: {fileID: 4591129526369665611}
+  material: {fileID: 5779374771469534413}
 --- !u!1 &4266648701941445473
 GameObject:
   m_ObjectHideFlags: 0

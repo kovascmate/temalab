@@ -718,7 +718,7 @@ Transform:
   m_GameObject: {fileID: 653731383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -51.6, z: 0}
   m_LocalScale: {x: 450, y: 0.5, z: 500}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -812,7 +812,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: -0.24663462, y: -0.15396282, z: -0.27410257, w: -0.91669774}
-  m_LocalPosition: {x: -116.29, y: 0.65, z: -16.52}
+  m_LocalPosition: {x: -116.29, y: -50.949997, z: -16.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   ConnectionData:
     Address: 127.0.0.1
     Port: 7777
-    ServerListenAddress: 127.0.0.1
+    ServerListenAddress: 192.168.248.1
   DebugSimulator:
     PacketDelayMS: 0
     PacketJitterMS: 0
@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5654237451909387631, guid: 7dc8aaa910f0747f194e699bc63e5155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -51.6
       objectReference: {fileID: 0}
     - target: {fileID: 5654237451909387631, guid: 7dc8aaa910f0747f194e699bc63e5155, type: 3}
       propertyPath: m_LocalPosition.z
