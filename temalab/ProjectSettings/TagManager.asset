@@ -9,6 +9,7 @@ TagManager:
   - Cliens
   - Host
   - +
+  - Camera
   layers:
   - Default
   - TransparentFX

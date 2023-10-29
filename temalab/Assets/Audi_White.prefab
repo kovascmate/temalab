@@ -5333,6 +5333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 4839645139217163426}
+  cam: {fileID: 4591129526369665611}
 --- !u!1 &4266648701941445473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,7 +5769,7 @@ GameObject:
   - component: {fileID: 4205447455683181181}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5781,13 +5782,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4591129526369665611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.24192187, y: 0, z: 0, w: 0.9702957}
+  m_LocalPosition: {x: 0, y: 3, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3216575129923569518}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28, y: 0, z: 0}
 --- !u!20 &6774659331683418263
 Camera:
   m_ObjectHideFlags: 0
@@ -5854,7 +5855,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4591129526369665611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb245c6c6f76c4b41b18d2bcad35046a, type: 3}
   m_Name: 
@@ -6279,9 +6280,9 @@ MonoBehaviour:
   maxReverseSpeed: 45
   accelerationMultiplier: 9
   maxSteeringAngle: 35
-  steeringSpeed: 0.5
-  brakeForce: 550
-  decelerationMultiplier: 2
+  steeringSpeed: 0.9
+  brakeForce: 600
+  decelerationMultiplier: 5
   handbrakeDriftMultiplier: 9
   bodyMassCenter: {x: 0, y: 0, z: 0}
   frontLeftMesh: {fileID: 1463318519932968647}

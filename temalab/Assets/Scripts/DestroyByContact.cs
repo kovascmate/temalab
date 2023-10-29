@@ -6,6 +6,7 @@ using Unity.Netcode;
 public class DestroyByContact : NetworkBehaviour
 {
     public GameObject Car;
+    public GameObject cam;
     private GameController gameController;
     // Start is called before the first frame update
     void Start()
@@ -23,22 +24,31 @@ public class DestroyByContact : NetworkBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (OwnerClientId == NetworkManager.ServerClientId)
+        if(gameController.maxHits != 0)
         {
-            Debug.Log("Collision on car");
-            if (other.tag == "+")
+            if (OwnerClientId == NetworkManager.ServerClientId)
             {
-                Vector3 scale = Car.transform.localScale;
-                scale.x *= 0.66f;
-                scale.y *= 0.66f;
-                scale.z *= 0.66f;
+                Debug.Log("Collision on host car");
+                if (other.tag == "+")
+                {
+                    Vector3 scale = Car.transform.localScale;
+                    scale.x *= 0.66f;
+                    scale.y *= 0.66f;
+                    scale.z *= 0.66f;
 
-                Car.transform.localScale = scale;
-                Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    Car.transform.localScale = scale;
+                    Car.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    cam.GetComponent<Follow_Player>().locationOffset *= scale.x;
+                    gameController.Hit();
+                }
+            }
+            else {
+                Car.tag = "+";
             }
         }
-        else {
-            Car.tag = "+";
+        else
+        {
+            Debug.Log("Already reached max hits");
         }
     }
 }
