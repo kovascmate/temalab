@@ -9,6 +9,7 @@ public class DestroyByContact : NetworkBehaviour
     public GameObject cam;
     public GameObject material;
     private GameController gameController;
+    private int maxDecrement;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class DestroyByContact : NetworkBehaviour
         if (gameControllerObject != null)
         {
             gameController = gameControllerObject.GetComponent<GameController>();
+            maxDecrement = gameController.maxHits;
         }
         if (gameController == null)
         {
@@ -45,8 +47,6 @@ public class DestroyByContact : NetworkBehaviour
             {
                 NetworkManager.Singleton.DisconnectClient(client.ClientId);
             }
-
-            gameController.maxHits = 5;
         }
     }
 
@@ -77,6 +77,18 @@ public class DestroyByContact : NetworkBehaviour
         else
         {
             Debug.Log("Already reached max hits");
+        }
+
+        if(other.tag == "PowerUp" && Car.tag == "+" && OwnerClientId != NetworkManager.ServerClientId && maxDecrement > 0)
+        {
+            Vector3 scale = Car.transform.localScale;
+            scale.x *= 0.66f;
+            scale.y *= 0.66f;
+            scale.z *= 0.66f;
+
+            Car.transform.localScale = scale;
+            maxDecrement--;
+            Destroy(other.gameObject);
         }
     }
 }
